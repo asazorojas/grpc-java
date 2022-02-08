@@ -1,0 +1,20 @@
+syntax = "proto3";
+package com.cornershop.product.api;
+
+service ProductService {
+  rpc GetProduct(GetProductRequest) returns (GetProductResponse);
+}
+
+message GetProductRequest {
+  string product_id = 1;
+}
+
+message GetProductResponse {
+  Product product = 1;
+}
+
+message Product {
+  string name = 1;
+  string description = 2;
+  double price = 3;
+}
